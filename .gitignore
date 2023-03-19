@@ -130,3 +130,4 @@ dmypy.json
 
 # bennu's ignore list
 Pipfile
+Pipfile.lock
