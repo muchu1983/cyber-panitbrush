@@ -8,8 +8,10 @@ import shutil
 origin_file = "./inputs/origin.mp4"
 inputs_prefix = "./inputs/"
 outputs_prefix = "./outputs/"
-os.makedirs(inputs_prefix)
-os.makedirs(outputs_prefix)
+if not os.path.exists(inputs_prefix):
+	os.makedirs(inputs_prefix)
+if not os.path.exists(outputs_prefix):
+	os.makedirs(outputs_prefix)
 fps = 30
 
 def start():
