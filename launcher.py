@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" """
+
 from src.core import main as main
 
 def start():
