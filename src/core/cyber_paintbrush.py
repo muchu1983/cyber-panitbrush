@@ -41,8 +41,8 @@ strEmojiList = ["(((angry)))",
 
 strBasicList = ["masterpiece", "best quality", "high resolution", "ultra detailed", "solo"]
 strCustomedList = ["1boy", "(cool boy face)", "in the forest", "dark hair", "short hair", "((symmetrical face))"]
-strLoraSettingList = ["flat color", "big head style", "detailed eyes",
-	"<lora:cartoonyStyle_cartoonyStyleV1:1>"]
+#strLoraSettingList = ["flat color", "big head style", "detailed eyes",
+#	"<lora:cartoonyStyle_cartoonyStyleV1:1>"]
 
 strBeforeEmoji = "close front shoot symmetrical photo portrait of one young male werewolf"
 strAfterEmoji = " with wolf ears"
@@ -54,8 +54,9 @@ def writeToFile(strFolderPath="./"):
 
 			strPromptLine = strBeforeEmoji + strEmoji + strAfterEmoji + ", " + \
 				','.join(strBasicList) + ", " + \
-				','.join(strCustomedList) + ", " + \
-				','.join(strLoraSettingList)
+				','.join(strCustomedList)
+				#','.join(strCustomedList) + ", " + \
+				#','.join(strLoraSettingList)
 			f.write(strPromptLine + "\n")
 			print(strPromptLine)
 
