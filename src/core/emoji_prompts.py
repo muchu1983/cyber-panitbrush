@@ -9,15 +9,17 @@ red eyes, silver hair, ponytail, black dress, fox ears,
 flat color, upper body, pure white background, big head style, detailed eyes,
 <lora:cartoonyStyle_cartoonyStyleV1:1>
 """
+import os
+
 strEmojiList = ["(((happy)))", "(((angry)))", "(((crying)))", "(((laughing out loud)))"]
 strBasicList = ["masterpiece", "best quality", "high resolution", "ultra detailed", "solo"]
-strCustomedList = ["1boy", "blue eyes", "orange hair", "short hair", "white dress", "bear ears"]
-strLoraSettingList = ["flat color", "upper body", "pure white background", "big head style", "detailed eyes",
+strCustomedList = ["1girl", "golden eyes", "golden hair", "long hair", "white dress", "cat ears", "princess dress", "ballgown", "wavy hair"]
+strLoraSettingList = ["flat color", "pure white background", "big head style", "detailed eyes",
 	"<lora:cartoonyStyle_cartoonyStyleV1:1>"]
 
-
-def main():
-	with open("prompts_file.txt", "w") as f:
+def writeToFile(strFolderPath="./"):
+	strFilePath = os.path.join(strFolderPath, "prompts_file.txt")
+	with open(strFilePath, "w") as f:
 		for strEmoji in strEmojiList:
 			strPromptLine = ','.join(strBasicList) + \
 				", " + strEmoji + ", " + \
@@ -29,4 +31,4 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+	writeToFile()

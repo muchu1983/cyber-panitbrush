@@ -4,6 +4,7 @@
 import cv2
 import os
 import shutil
+import src.core.emoji_prompts as emoji_prompts
 
 origin_file = "./inputs/origin.mp4"
 inputs_prefix = "./inputs/"
@@ -19,6 +20,7 @@ def start():
 	print("./inputs/origin.mp4 > ./outputs/*.png :input '1'")
 	print("./outputs/*.png > ./inputs/*.png      :input '2'")
 	print("./inputs/*.png > ./outputs/target.mp4 :input '3'")
+	print("emoji prompts_file.txt > ./outputs/   :input '4'")
 	user_input = input("[1|2|3]?:")
 	print("your input is: " + user_input)
 	match user_input:
@@ -31,6 +33,9 @@ def start():
 		case "3":
 			#step 3
 			pngsToMp4()
+		case "4":
+			#emoji prompts_file.txt
+			emoji_prompts.writeToFile(strFolderPath=outputs_prefix)
 		case _:
 			print("wrong answer.stoped.")
 
