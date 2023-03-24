@@ -20,7 +20,7 @@ strBeforeEmoji = 'masterpiece, best quality, highres,\
 	<lora:reinhardtOverwatch_v1:0.8>, 1man, old man, reinhardt,\
 	(muscular male:1.3), strong body, male focus, abdominal muscles, '
 strAfterEmoji = 'extremely_detailed_eyes_and_face, detailed eyes, Fire in eyes, extremely detailed eyes,\
-	ponytail, short hair, brown hair, forehead, \
+	ponytail, long hair, brown hair, forehead, \
 	beard,  goatee, stubble, \
 	upper body, high detailed skin,  looking at viewer,\
 	(topless male:1.2), shirtless ,pants,\
