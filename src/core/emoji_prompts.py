@@ -3,67 +3,44 @@
 """" """
 import os
 
-strEmojiList = ["(((angry)))",
-"(((cosy)))",
-"(((depressing)))",
-"(((disgusting)))",
-"(((embarrassing)))",
-"(((energetic)))",
-"(((evil)))",
-"(((fearful)))",
-"(((frightening)))",
-"(((grim)))",
-"(((guilty)))",
-"(((happy)))",
-"(((hopeful)))",
-"(((hopeless)))",
-"(((lonely)))",
-"(((lustful)))",
-"(((peaceful)))",
-"(((proud)))",
-"(((relieving)))",
-"(((romantic)))",
-"(((sad)))",
-"(((satisfying)))",
-"(((shameful)))",
-"(((surprising)))",
-"(((resist)))",
-"(((smile)))",
-"(((sigh)))",
-"(((cry)))",
-"(((cry hard)))",
-"(((move)))",
-"(((laughing out loud)))",
-"(((naughty)))",
-"(((wink)))",
-"(((scold)))",
-"(((glutton)))"]
+#strEmojiList = ["((😀))","((🤬))","((😂))","((🙄))","((😴))","((😍))","((😜))","((😆))",\
+#	"((😉))","((😵))","((😠))","((😎))","((🥱))","((🥶))","((🤮))","((😶))",\
+#	"((😐))","((😨))","((🤡))","((😭))","((👿))","((💀))","((😇))","((😏))"]
+strEmojiList = ['blush', 'tongue out', 'tears', 'grin', 'embarrassed',\
+	'fangs', 'angry', 'smug', 'evil smile', 'sleepy' ]
 
-strBasicList = ["masterpiece", "best quality", "high resolution", "ultra detailed", "solo"]
-strCustomedList = ["1boy", "(cool boy face)", "in the forest", "dark hair", "short hair", "((symmetrical face))"]
-strLoraSettingList = ["flat color", "big head style", "detailed eyes",
-	"<lora:cartoonyStyle_cartoonyStyleV1:1>"]
+strNegative = 'easynegative, worst quality, low quality, normal quality, lowres,\
+	blurry,	girl, woman, female, exposed breast, nipples, NSFW,\
+	mutated hands and fingers, poorly drawn hands, bad hands,missing finger, extra digits, fewer digits,\
+	monochrome, logo, text, error, signature, watermark, username, artist name,\
+	tattoo, weapon, cockeye, walleye, (bad anatomy:2), '
 
-strBeforeEmoji = "close front shoot symmetrical photo portrait of one young male werewolf"
-strAfterEmoji = " with wolf ears"
+strBeforeEmoji = 'masterpiece, best quality, highres,\
+	<lora:Moxin_10:0.5>,  shuimobysim, badashanren,\
+	<lora:reinhardtOverwatch_v1:0.8>, 1man, old man, reinhardt,\
+	(muscular male:1.3), strong body, male focus, abdominal muscles, '
+strAfterEmoji = 'extremely_detailed_eyes_and_face, detailed eyes, Fire in eyes, extremely detailed eyes,\
+	ponytail, long hair, brown hair, forehead, \
+	beard,  goatee, stubble, \
+	upper body, high detailed skin,  looking at viewer,\
+	(topless male:1.2), shirtless ,pants,\
+	simple background, white background, '
 
 def writeToFile(strFolderPath="./"):
-	strFilePath = os.path.join(strFolderPath, "prompts_file.txt")
-	with open(strFilePath, "w") as f:
+	#正向提示詞
+	strPromptsFilePath = os.path.join(strFolderPath, "line_prompts_file.txt")
+	with open(strPromptsFilePath, "w") as f:
 		for strEmoji in strEmojiList:
+			strPromptsLine = strBeforeEmoji + "(" + strEmoji + ":1.5)," + strAfterEmoji
+			f.write(strPromptsLine + "\n")
+			print(strPromptsLine)
 
-			strPromptLine = strBeforeEmoji + strEmoji + strAfterEmoji + ", " + \
-				','.join(strBasicList) + ", " + \
-				','.join(strCustomedList) + ", " + \
-				','.join(strLoraSettingList)
-			f.write(strPromptLine + "\n")
-			print(strPromptLine)
-
+	#反向提示詞
+	strNegativeFilePath = os.path.join(strFolderPath, "line_negative_file.txt")
+	with open(strNegativeFilePath, "w") as f:
+		f.write(strNegative + "\n")
 
 
 if __name__ == '__main__':
 	writeToFile()
 
-""" negative
-ng_deepnegative_v1_75t,  easynegative, (worst quality, low quality:1.4), logo, text, monochrome, NSFW, mutated hands and fingers, poorly drawn hands, ((bad anatomy))
-"""
