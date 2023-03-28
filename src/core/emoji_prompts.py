@@ -13,7 +13,7 @@ strPrompts = 'masterpiece, best quality, highres,\
     high detailed skin,\
     pants,\
     simple background, white background,\
-    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:0.8>, " '
+    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>, " '
     #colored skin, bandages,
 
 strNegatives = ' --negative_prompt "easynegative, ng_deepnegative_v1_75t,\
