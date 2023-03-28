@@ -7,13 +7,14 @@ strProList = ['cra', 'eniripsa', 'iop', 'osamodas', 'sacrier', 'sram', 'xelor']
 strEmojiList = ['happy', 'sad', 'scared']
 
 strPrompts = 'masterpiece, best quality, highres,\
-    1girl, beautiful, upper body, looking at viewer,\
+    1girl, beautiful, full body, looking at viewer,\
     extremely_detailed_eyes_and_face,\
     ponytail, long hair, brown hair, forehead,\
     high detailed skin,\
     pants,\
     simple background, white background,\
-    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:0.8>, colored skin, bandages, " '
+    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:0.8>, " '
+    #colored skin, bandages,
 
 strNegatives = ' --negative_prompt "easynegative, ng_deepnegative_v1_75t,\
     worst quality, low quality, normal quality, lowres, blurry,\
