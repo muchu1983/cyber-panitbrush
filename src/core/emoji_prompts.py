@@ -7,15 +7,14 @@ strProList = ['cra', 'eniripsa', 'iop', 'osamodas', 'sacrier', 'sram', 'xelor']
 strEmojiList = ['happy', 'sad', 'scared']
 
 strPrompts = 'masterpiece, best quality, highres,\
-    1girl, beautiful, full body, looking at viewer,\
-    extremely_detailed_eyes_and_face,\
-    ponytail, long hair, brown hair, forehead,\
-    high detailed skin,\
+    chibi, flat color, outline,\
+    1girl, beautiful, full body, standing,\
+    ponytail, short hair, brown hair, forehead,\
+    high detailed skin, extremely_detailed_eyes_and_face,\
     pants,\
     simple background, white background,\
     <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>, " '
-    #colored skin, bandages,
-
+    #colored skin, looking at viewer, bandages, bandaged head, 
 strNegatives = ' --negative_prompt "easynegative, ng_deepnegative_v1_75t,\
     worst quality, low quality, normal quality, lowres, blurry,\
     exposed breast, nipples, NSFW, (bad anatomy:2),\
@@ -23,7 +22,7 @@ strNegatives = ' --negative_prompt "easynegative, ng_deepnegative_v1_75t,\
     cockeye, walleye,\
     monochrome, logo, text, error, signature, watermark, username, artist name,\
     tattoo, weapon,\
-    turn pale, gloom (expression), "'
+    turn pale, gloom \\(expression\\), "'
 
 
 
