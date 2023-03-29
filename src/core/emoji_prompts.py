@@ -3,26 +3,29 @@
 """" """
 import os
 strPromptsStart = '--prompt "'
-strProList = ['cra', 'eniripsa', 'iop', 'osamodas', 'sacrier', 'sram', 'xelor']
+#strProList = ['cra', 'eniripsa', 'iop', 'osamodas', 'sacrier', 'sram', 'xelor']
+strProList = ['cra']
 strEmojiList = ['happy', 'sad', 'scared']
 
 strPrompts = 'masterpiece, best quality, highres,\
     chibi, flat color, outline,\
     1girl, beautiful, full body, standing,\
-    ponytail, short hair, brown hair, forehead,\
+    ponytail, short hair, red hair, forehead,\
     high detailed skin, extremely_detailed_eyes_and_face,\
     pants,\
     simple background, white background,\
     <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>, " '
     #colored skin, looking at viewer, bandages, bandaged head, 
+    
 strNegatives = ' --negative_prompt "easynegative, ng_deepnegative_v1_75t,\
     worst quality, low quality, normal quality, lowres, blurry,\
     exposed breast, nipples, NSFW, (bad anatomy:2),\
     mutated hands and fingers, poorly drawn hands, bad hands, missing finger, extra digits, fewer digits,\
     cockeye, walleye,\
     monochrome, logo, text, error, signature, watermark, username, artist name,\
-    tattoo, weapon,\
+    tattoo, \
     turn pale, gloom \\(expression\\), "'
+    #weapon,
 
 
 
