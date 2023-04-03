@@ -11,11 +11,11 @@ strPromptsStart = '--prompt "'
 strNegativesStart = '--negative_prompt "'
 strPnNEnd = '" '
 strPrompts = 'masterpiece, best quality, highres,\
-    simple background, white background, 10px width black border,\
+    simple background, white background,\
     1girl, beautiful, upper body,\
     forehead, pants,\
     <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>,\
-    eniripsa, chibi, outline,'
+    cra, chibi, outline,'
     
 strNegatives = 'worst quality, low quality, normal quality, lowres, blurry,\
     badhandv4, bad anatomy, cockeye, walleye,\
