@@ -1,47 +1,38 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""" """
+""" """
 import os
+strHairColorList = ['red hair', 'green hair', 'blue hair',]
+strEmojiList = ['happy', 'sad', 'scared', 'angry', 'cosy', 'depressing', 'disgusting', 'embarrasing', 'energetic',
+    'evil', 'fearful', 'frightening', 'grim', 'guilty', 'hopeful', 'hopeless', 'lonely', 'lustful', 'peaceful',
+    'proud', 'relieving', 'romantic', 'resist', 'smile', 'sigh', 'cry', 'cry hard', 'move', 'laughing out loud',
+    'naughty', 'wink', 'scold', 'glutton']
 strPromptsStart = '--prompt "'
-#strProList = ['cra', 'eniripsa', 'iop', 'osamodas', 'sacrier', 'sram', 'xelor']
-strProList = ['cra']
-strEmojiList = ['happy', 'sad', 'scared']
-
+strNegativesStart = '--negative_prompt "'
+strPnNEnd = '" '
 strPrompts = 'masterpiece, best quality, highres,\
-    chibi, flat color, outline,\
-    1girl, beautiful, full body, standing,\
-    ponytail, short hair, red hair, forehead,\
-    high detailed skin, extremely_detailed_eyes_and_face,\
-    pants,\
     simple background, white background,\
-    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>, " '
-    #colored skin, looking at viewer, bandages, bandaged head, 
+    1girl, beautiful, upper body,\
+    forehead,\
+    pants,\
+    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>,'
     
-strNegatives = ' --negative_prompt "easynegative, ng_deepnegative_v1_75t,\
-    worst quality, low quality, normal quality, lowres, blurry,\
-    exposed breast, nipples, NSFW, (bad anatomy:2),\
-    mutated hands and fingers, poorly drawn hands, bad hands, missing finger, extra digits, fewer digits,\
-    cockeye, walleye,\
-    monochrome, logo, text, error, signature, watermark, username, artist name,\
-    tattoo, \
-    turn pale, gloom \\(expression\\), "'
-    #weapon,
+strNegatives = 'worst quality, low quality, normal quality, lowres, blurry,\
+    badhandv4, bad anatomy, cockeye, walleye,\
+    nsfw, monochrome, logo, text, error, signature, watermark, username, artist name,'
 
-
-
-
-def writeToFile(strFolderPath="./"):
+def writeToFile(strFolderPath='./'):
     #提示詞
-    strPromptsFilePath = os.path.join(strFolderPath, "line_prompts_file.txt")
-    with open(strPromptsFilePath, "w") as f:
-        for strPro in strProList:
-            for strEmoji in strEmojiList:
+    strPromptsFilePath = os.path.join(strFolderPath, 'line_prompts_file.txt')
+    with open(strPromptsFilePath, 'w') as f:
+        for strEmoji in strEmojiList:
+            for strHairColor in strHairColorList:
                 strPromptsLine = strPromptsStart +\
-                "(" + strPro + ")," +\
-                "(" + strEmoji + ")," +\
-                strPrompts +\
-                strNegatives
-                f.write(strPromptsLine + "\n")
+                '(' + strEmoji + '),(' + strHairColor + '),' +\
+                strPrompts + strPnNEnd +\
+                strNegativesStart +\
+                strNegatives + strPnNEnd
+                f.write(strPromptsLine + '\n')
                 print(strPromptsLine)
 
 def main():
