@@ -11,15 +11,16 @@ strPromptsStart = '--prompt "'
 strNegativesStart = '--negative_prompt "'
 strPnNEnd = '" '
 strPrompts = 'masterpiece, best quality, highres,\
-    simple background, white background,\
+    simple background, white background, 10px width black border,\
     1girl, beautiful, upper body,\
-    forehead,\
-    pants,\
-    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>,'
+    forehead, pants,\
+    <lora:Toru8pWavenChibiStyle_wavenchibiLoraV10:1>,\
+    eniripsa, chibi, outline,'
     
 strNegatives = 'worst quality, low quality, normal quality, lowres, blurry,\
     badhandv4, bad anatomy, cockeye, walleye,\
-    nsfw, monochrome, logo, text, error, signature, watermark, username, artist name,'
+    nsfw, monochrome, logo, text, error, signature, watermark, username, artist name,\
+    turn pale, gloom \\(expression\\),'
 
 def writeToFile(strFolderPath='./'):
     #提示詞
