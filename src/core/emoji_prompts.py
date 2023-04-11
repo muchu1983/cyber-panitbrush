@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-""" """
+""" emoji prompts"""
+
 import os
 strHairColorList = ['red hair', 'green hair', 'blue hair',]
 strEmojiList = ['happy', 'sad', 'scared', 'angry', 'cosy', 'depressing', 'disgusting', 'embarrasing', 'energetic',
